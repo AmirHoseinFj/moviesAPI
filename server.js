@@ -1,3 +1,12 @@
+/*********************************************************************************
+* WEB422 – Assignment 1* I declare that this assignment is my own work in accordance with Seneca Academic Policy.
+* No part of this assignment has been copied manually or electronically from any other source
+* (including web sites) or distributed to other students.
+*
+* Name: Amirhossein Ghaffarzadeh Student ID: 120734223 Date: 2024-01-19
+* Cyclic Link: https://zany-gold-cheetah-vest.cyclic.app
+/*********************************************************************************/
+
 const MoviesDB = require('./modules/moviesDB.js');
 const db = new MoviesDB();
 const express = require('express');
@@ -15,7 +24,6 @@ app.get("/", (req, res) => {
     res.json({ message: "API Listening" });
 });
 
-// API Routes
 app.post('/api/movies', async (req, res) => {
     try {
         let result = await db.addNewMovie(req.body);
