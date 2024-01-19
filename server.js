@@ -11,7 +11,6 @@ const HTTP_PORT = process.env.PORT || 8080;
 app.use(cors());
 app.use(express.json());
 
-// Basic route
 app.get("/", (req, res) => {
     res.json({ message: "API Listening" });
 });
@@ -63,7 +62,7 @@ app.delete('/api/movies/:id', async (req, res) => {
     }
 });
 
-// Initialize DB and start server
+// "Initializing" the Module before the server starts
 db.initialize(process.env.MONGODB_CONN_STRING)
     .then(() => {
         app.listen(HTTP_PORT, () => {
